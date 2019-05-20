@@ -12,6 +12,11 @@
 @import "components/index";
 @import "pages/index";
 
+.main-container {
+  margin: 50px auto;
+  width: 1000px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $headers-font;
 }
