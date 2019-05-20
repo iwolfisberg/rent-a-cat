@@ -8,6 +8,13 @@ class CatsController < ApplicationController
     @cat = Cat.new
   end
 
+  def create
+    @cat = Cat.new
+    @cat.user = current_user
+    @cat.save
+    redirect_to cat_path(@cat)
+  end
+
   def show
     @user = current_user
     @cat.user_id = @user
@@ -15,8 +22,11 @@ class CatsController < ApplicationController
 
   private
 
+  def cat_params
+    params.require(:cat).permit(:name, :description, :address, :photo)
+  end
+
   def set_cat
     @cat = Cat.find(params[:id])
   end
-
 end
