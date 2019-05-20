@@ -1,0 +1,17 @@
+<div class="cat-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('')">
+</div>
+
+<div class="cat-container">
+  <div class="cat-card">
+    <div class="cat-card-information">
+      <h1><%= @cat.name %></h1>
+      <p><%= @cat.address %></p>
+    </div>
+    <div class="cat-card-description">
+      <p><%= @cat.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus ratione nam velit, a eveniet earum, fugit laudantium voluptates suscipit qui quisquam aspernatur officia repellat quaerat provident. Hic, nisi voluptates ducimus.</p>
+    </div>
+  </div>
+  <%= render 'shared/form_rental' %>
+</div>
+
