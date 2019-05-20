@@ -4,15 +4,21 @@ class CatsController < ApplicationController
   def index
   end
 
+  def show
+  end
+
   def new
     @cat = Cat.new
   end
 
   def create
-    @cat = Cat.new
+    @cat = Cat.new(cat_params)
     @cat.user = current_user
-    @cat.save
-    redirect_to cat_path(@cat)
+    if @cat.save
+      redirect_to cat_path(@cat)
+    else
+      render :new
+    end
   end
 
   def show

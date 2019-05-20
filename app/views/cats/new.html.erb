@@ -1,6 +1,6 @@
 <h1>Ajouter un nouveau chat</h1>
 
-<%= simple_form_for @cat do |f| %>
+<%= simple_form_for [@user, @cat] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :address %>
