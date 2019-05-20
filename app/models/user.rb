@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :rentals
   has_many :cats
+
+  validates :username, presence: true
 end
