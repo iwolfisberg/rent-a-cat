@@ -1,12 +1,6 @@
 class CatsController < ApplicationController
   before_action :set_cat, only: [:show]
 
-  def index
-  end
-
-  def show
-  end
-
   def new
     @cat = Cat.new
   end
