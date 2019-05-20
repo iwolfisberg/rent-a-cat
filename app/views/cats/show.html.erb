@@ -1,1 +1,4 @@
 <h1>Show de <%= @cat.name %></h1>
+
+<!-- photo du chat à ajouter à la show : -->
+<%= cl_image_tag @cat.photo, height: 300, width: 400, crop: :fill %>
