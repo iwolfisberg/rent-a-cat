@@ -24,6 +24,7 @@ class CatsController < ApplicationController
   def show
     @user = current_user
     @cat.user_id = @user
+    @rental = Rental.new
   end
 
   private

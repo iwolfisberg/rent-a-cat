@@ -5,8 +5,8 @@
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
-// @import "font-awesome-sprockets";
-// @import "font-awesome";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 // Your CSS partials
 @import "components/index";
@@ -17,3 +17,14 @@
   width: 1000px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headers-font;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+p {
+  font-size: 16px;
+}
