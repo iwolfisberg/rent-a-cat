@@ -1,10 +1,14 @@
-<h1>Ajouter un nouveau chat</h1>
+<div class="main-container">
 
-<%= simple_form_for [@user, @cat] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "Ajouter un chat", class: "btn btn-primary" %>
-<% end %>
+  <h1>Ajouter un nouveau chat</h1>
+
+  <%= simple_form_for [@user, @cat] do |f| %>
+    <%= f.input :name, :label => "Nom" %>
+    <%= f.input :description %>
+    <%= f.input :address, :label => "Adresse" %>
+    <%= f.input :photo, :label => "Ajouter une photo" %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit "Ajouter un chat", class: "btn btn-secondary" %>
+  <% end %>
+
+</div>
