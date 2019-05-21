@@ -1,9 +1,11 @@
 <%= render 'shared/navbar' %>
 
-<div class="main-container index">
+<div class="main-container">
   <h1>Mon profil</h1>
 
-  <h2>Mes chats</h2>
+  <div class="index">
+    <h2>Mes chats</h2>
+
     <div class="cards-cat">
       <% if @cats.first %>
         <% @cats.each do |cat| %>
@@ -18,11 +20,16 @@
           </div>
         <% end %>
       <% else %>
-        <p>Vous n'avez aucun chat</p>
+        <p>Vous n'avez aucun chat.</p>
       <% end %>
     </div>
 
-  <h2>Les chats que j'emprunte</h2>
+    <%= link_to "Ajouter un nouveau chat", new_cat_path, class: "btn btn-secondary" %>
+  </div>
+
+  <div class="index">
+    <h2>Les chats que j'emprunte</h2>
+
     <div class="cards-cat">
       <% if @rentals.first %>
         <% @rentals.each do |rental| %>
@@ -41,9 +48,13 @@
           </div>
         <% end %>
       <% else %>
-        <p>Vous n'avez aucun emprunt</p>
+        <p>Vous n'avez aucun emprunt.</p>
       <% end %>
     </div>
+
+    <%= link_to "Rechercher un chat", new_cat_path, class: "btn btn-secondary" %>
+
+  </div>
 
 </div>
 
