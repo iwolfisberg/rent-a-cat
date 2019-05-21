@@ -1,2 +1,17 @@
 <h1>Pages#myprofile</h1>
 <p>Find me in app/views/pages/myprofile.html.erb</p>
+<%= @user.username %>
+<h1>Vos chats</h1>
+  <div class="cards-cat">
+    <% @cats.each do |cat| %>
+    <div class="cards-cat-components">
+      <div class="card-cat-photo">
+        <%= cl_image_tag cat.photo %>
+      </div>
+      <div class="card-cat-infos">
+        <h2><%= link_to cat.name, cat_path(cat) %></h2>
+        <p><%= cat.address %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
