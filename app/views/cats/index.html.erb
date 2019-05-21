@@ -3,7 +3,7 @@
   <div class="cards-cat">
     <% @cats.each do |cat| %>
       <div class="card-cat-photo">
-        <img src="https://source.unsplash.com/random" alt="cat">
+        <%= cl_image_tag cat.photo, height: 300, width: 400, crop: :fill %>
         <div class="card-cat-infos">
           <h2><%= cat.name %></h2>
           <p><%= cat.address %></p>
