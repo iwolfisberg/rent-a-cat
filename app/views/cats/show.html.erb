@@ -1,7 +1,5 @@
-
-<div class="cat-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('')">
-         <%= cl_image_tag @cat.photo, height: 300, width: 400, crop: :fill %>
+<div class="cat-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
+         url('<%= cl_image_path @cat.photo, height: 400 %>')">
 </div>
 
 <div class="cat-container">
