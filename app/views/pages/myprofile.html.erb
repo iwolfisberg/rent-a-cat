@@ -1,7 +1,8 @@
 <h1>Pages#myprofile</h1>
 <p>Find me in app/views/pages/myprofile.html.erb</p>
 <%= @user.username %>
-<h1>Vos chats</h1>
+
+<h1>Mes chats</h1>
   <div class="cards-cat">
     <% @cats.each do |cat| %>
       <div class="cards-cat-components">
@@ -15,3 +16,25 @@
       </div>
     <% end %>
   </div>
+
+<h1>Mes locations</h1>
+  <div class="cards-cat">
+    <% @rentals.each do |rental| %>
+      <% cat = Cat.find(rental.cat_id) %>
+      <% user = User.find(rental.user_id) %>
+      <div class="cards-cat-components">
+        <div class="card-cat-photo">
+          <%= cl_image_tag cat.photo %>
+        </div>
+        <div class="card-cat-infos">
+          <h2><%= link_to cat.name, cat_path(cat) %></h2>
+          <p><%= cat.address %></p>
+          <p>Propriétaire : <%= user.username %></p>
+          <p>Loué du <%= rental.date_start %> au <%= rental.date_end %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+
