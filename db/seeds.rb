@@ -10,20 +10,34 @@ User.destroy_all
 Cat.destroy_all
 Rental.destroy_all
 
-iris = User.create!([{ username: "iris", email: "iris.wolfisberg@hotmail.fr", password: "secret" }])
-nico = User.create!([{ username: "nico", email: "varonenico@gmail.com", password: "secret" }])
-justine = User.create!([{ username: "justine", email: "jtincq@gmail.com", password: "secret" }])
+iris = User.create!(username: "iris", email: "iris.wolfisberg@hotmail.fr", password: "secret")
+nico = User.create!(username: "nico", email: "varonenico@gmail.com", password: "secret")
+justine = User.create!(username: "justine", email: "jtincq@gmail.com", password: "secret")
 
-choupette = Cat.create!([{ name: "Choupette", address: "Chemin des Pâquerettes 18, 1580 Avenches", user_id: iris[0][:id], photo: "image/upload/v1558367667/c9fs6bujk78f3tzrbsww.jpg" }])
-Cat.create!([{ name: "Roblochon", address: "Chemin des Pâquerettes 18, 1580 Avenches", user_id: nico[0][:id], photo: "image/upload/v1558367667/c9fs6bujk78f3tzrbsww.jpg" }])
-Cat.create!([{ name: "Biscotte", address: "Rue de Carroz-Devant 3, 1844 Villeneuve", user_id: nico[0][:id], photo: "image/upload/v1558367667/c9fs6bujk78f3tzrbsww.jpg" }])
-Cat.create!([{ name: "Romeo", address: "Rue de Carroz-Devant 3, 1844 Villeneuve", user_id: justine[0][:id], photo: "image/upload/v1558367667/c9fs6bujk78f3tzrbsww.jpg" }])
-Cat.create!([{ name: "Garfield", address: "Avenue de la Chablière 22, 1004 Lausanne", user_id: justine[0][:id], photo: "image/upload/v1558367667/c9fs6bujk78f3tzrbsww.jpg" }])
-Cat.create!([{ name: "Plume", address: "Rue de Carroz-Devant 3, 1844 Villeneuve", user_id: nico[0][:id], photo: "image/upload/v1558367667/c9fs6bujk78f3tzrbsww.jpg" }])
-Cat.create!([{ name: "Zazou", address: "Rue de Carroz-Devant 3, 1844 Villeneuve", user_id: justine[0][:id], photo: "image/upload/v1558367667/c9fs6bujk78f3tzrbsww.jpg" }])
-Cat.create!([{ name: "Lola", address: "Avenue de la Chablière 22, 1004 Lausanne", user_id: iris[0][:id], photo: "image/upload/v1558367667/c9fs6bujk78f3tzrbsww.jpg" }])
-Cat.create!([{ name: "Pistach", address: "Rue de Carroz-Devant 3, 1844 Villeneuve", user_id: nico[0][:id], photo: "image/upload/v1558367667/c9fs6bujk78f3tzrbsww.jpg" }])
-Cat.create!([{ name: "Caramel", address: "Rue de Carroz-Devant 3, 1844 Villeneuve", user_id: justine[0][:id], photo: "image/upload/v1558367667/c9fs6bujk78f3tzrbsww.jpg" }])
-Cat.create!([{ name: "Jean-Louis", address: "Avenue de la Chablière 22, 1004 Lausanne", user_id: iris[0][:id], photo: "image/upload/v1558367667/c9fs6bujk78f3tzrbsww.jpg" }])
+url = "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558366291/lqd64liddov2csgwlsrg.jpg"
 
-Rental.create!([{ user_id: nico[0][:id], cat_id: choupette[0][:id], date_start: "13-06-2019", date_end: "18-06-2019" }])
+choupette = Cat.new(name: "Choupette", address: "Chemin des Pâquerettes 18, 1580 Avenches", user_id: iris.id)
+choupette.remote_photo_url = url
+choupette.save
+
+Roblochon = Cat.new(name: "Roblochon", address: "Chemin des Pâquerettes 18, 1580 Avenches", user_id: iris.id)
+Roblochon.remote_photo_url = url
+Roblochon.save
+
+Romeo = Cat.new(name: "Romeo", address: "Chemin des Pâquerettes 18, 1580 Avenches", user_id: justine.id)
+Romeo.remote_photo_url = url
+Romeo.save
+
+Biscotte = Cat.new(name: "Biscotte", address: "Chemin des Pâquerettes 18, 1580 Avenches", user_id: justine.id)
+Biscotte.remote_photo_url = url
+Biscotte.save
+
+Garfield = Cat.new(name: "Garfield", address: "Chemin des Pâquerettes 18, 1580 Avenches", user_id: nico.id)
+Garfield.remote_photo_url = url
+Garfield.save
+
+Plume = Cat.new(name: "Plume", address: "Chemin des Pâquerettes 18, 1580 Avenches", user_id: nico.id)
+Plume.remote_photo_url = url
+Plume.save
+
+Rental.create!([{ user_id: nico.id, cat_id: choupette.id, date_start: "13-06-2019", date_end: "18-06-2019" }])
