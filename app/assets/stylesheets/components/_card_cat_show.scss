@@ -1,3 +1,11 @@
+.cat-container {
+  margin: 35px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 1000px;
+}
+
 .cat-card-information {
   margin-bottom: 35px;
   h1 {
