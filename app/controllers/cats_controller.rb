@@ -1,6 +1,10 @@
 class CatsController < ApplicationController
   before_action :set_cat, only: [:show]
 
+  def index
+    @cats = Cat.all.order(created_at: :desc)
+  end
+
   def new
     @cat = Cat.new
   end
@@ -19,10 +23,6 @@ class CatsController < ApplicationController
     @user = current_user
     @cat.user_id = @user
     @rental = Rental.new
-  end
-
-  def index
-    @cats = Cat.all
   end
 
   private
