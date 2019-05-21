@@ -16,7 +16,7 @@
         <li class="nav-item"><%= link_to "Ajouter un chat", new_cat_path, class: "nav-link" %></li>
         <li class="nav-item"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
       <% else %>
-        <li class="nav-item"><%= link_to "Inscription", new_user_session_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "Inscription", new_user_registration_path, class: "nav-link" %></li>
         <li class="nav-item"><%= link_to "Connexion", new_user_session_path, class: "nav-link" %></li>
       <% end %>
     </ul>
