@@ -22,7 +22,7 @@
     <div class="cards-cat">
       <% @rentals.each do |rental| %>
         <% cat = Cat.find(rental.cat_id) %>
-        <% user = User.find(rental.user_id) %>
+        <% owner = User.find(cat.user_id) %>
         <div class="cards-cat-components">
           <div class="card-cat-photo">
             <%= cl_image_tag cat.photo %>
@@ -30,7 +30,7 @@
           <div class="card-cat-infos">
             <h2><%= link_to cat.name, cat_path(cat) %></h2>
             <p><%= cat.address %></p>
-            <p>Propriétaire : <%= user.username.capitalize %></p>
+            <p>Propriétaire : <%= owner.username.capitalize %></p>
             <p>Emprunt du <%= rental.date_start %> au <%= rental.date_end %></p>
           </div>
         </div>
