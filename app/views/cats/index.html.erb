@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Les derniers chats</h1>
+  <div class="card-cat">
+    <% @cats.each do |cat| %>
+      <div class="card-cat-photo">
+        <img src="https://source.unsplash.com/random" alt="cat">
+        <div class="card-cat-infos">
+          <h2><%= cat.name %></h2>
+          <p><%= cat.address %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
