@@ -1,5 +1,8 @@
 .index {
   margin-top: 50px  !important;
+  h1 {
+      margin-bottom: 15px;
+  }
 }
 
 .cards-cat {
@@ -22,16 +25,41 @@
 
 .card-cat-infos {
   padding: 16px;
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
 }
 
-.card-cat-infos h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
 
-.card-cat-infos p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
+// objet plus petit que large device (lg)
+@media(max-width: 992px) {
+  .cards-cat {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-gap: 15px;
+        width: 100%;
+  }
+}
+// objet plus petit que small device (xs)
+@media(max-width: 768px) {
+  .cards-cat {
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-row-gap: 15px;
+        width: 100%;
+        justify-items: center;
+  }
+  .cards-cat-components {
+    width: 80vh;
+  }
+  .index h1 {
+    text-align: center;
+  }
 }

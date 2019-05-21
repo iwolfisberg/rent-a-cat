@@ -2,17 +2,17 @@
 
 <div class="main-container index">
   <h1>Les derniers chats</h1>
-  <div class="cards-cat">
+  <div class="cards-cat row">
     <% @cats.each do |cat| %>
-    <div class="cards-cat-components">
-      <div class="card-cat-photo">
-        <%= cl_image_tag cat.photo %>
+      <div class="cards-cat-components">
+        <div class="card-cat-photo">
+          <%= cl_image_tag cat.photo %>
+        </div>
+        <div class="card-cat-infos">
+          <h2><%= link_to cat.name, cat_path(cat) %></h2>
+          <p><%= cat.address %></p>
+        </div>
       </div>
-      <div class="card-cat-infos">
-        <h2><%= link_to cat.name, cat_path(cat) %></h2>
-        <p><%= cat.address %></p>
-      </div>
-    </div>
     <% end %>
   </div>
 </div>
