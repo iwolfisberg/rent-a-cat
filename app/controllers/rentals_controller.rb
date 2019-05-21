@@ -7,7 +7,7 @@ class RentalsController < ApplicationController
     @rental.cat = @cat
 
     if @rental.save
-      redirect_to cat_path(@cat) # A changer pour "my_profile"
+      redirect_to myprofile_path
     else
       render cat_path(@cat)
     end
