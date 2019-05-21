@@ -1,5 +1,11 @@
+
 <div class="cat-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+<<<<<<< HEAD
          url('<%= cl_image_path @cat.photo, height: 400 %>')">
+=======
+         url('')">
+         <%= cl_image_tag @cat.photo, height: 300, width: 400, crop: :fill %>
+>>>>>>> master
 </div>
 
 <div class="cat-container">
@@ -14,4 +20,3 @@
   </div>
   <%= render 'shared/form_rental' %>
 </div>
-
