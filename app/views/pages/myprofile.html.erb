@@ -1,0 +1,41 @@
+<%= render 'shared/navbar' %>
+
+<div class="main-container index">
+  <h1>Mon profil</h1>
+
+  <h2>Mes chats</h2>
+    <div class="cards-cat">
+      <% @cats.each do |cat| %>
+        <div class="cards-cat-components">
+          <div class="card-cat-photo">
+            <%= cl_image_tag cat.photo %>
+          </div>
+          <div class="card-cat-infos">
+            <h2><%= link_to cat.name, cat_path(cat) %></h2>
+            <p><%= cat.address %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  <h2>Les chats que j'emprunte</h2>
+    <div class="cards-cat">
+      <% @rentals.each do |rental| %>
+        <% cat = Cat.find(rental.cat_id) %>
+        <% user = User.find(rental.user_id) %>
+        <div class="cards-cat-components">
+          <div class="card-cat-photo">
+            <%= cl_image_tag cat.photo %>
+          </div>
+          <div class="card-cat-infos">
+            <h2><%= link_to cat.name, cat_path(cat) %></h2>
+            <p><%= cat.address %></p>
+            <p>Propriétaire : <%= user.username.capitalize %></p>
+            <p>Emprunt du <%= rental.date_start %> au <%= rental.date_end %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+</div>
+
