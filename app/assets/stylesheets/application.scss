@@ -17,6 +17,12 @@
   width: 1000px;
 }
 
+@media(max-width: 992px) {
+  .main-container {
+    width: 100%;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $headers-font;
 }
