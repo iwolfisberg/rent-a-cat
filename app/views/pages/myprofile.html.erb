@@ -5,35 +5,43 @@
 
   <h2>Mes chats</h2>
     <div class="cards-cat">
-      <% @cats.each do |cat| %>
-        <div class="cards-cat-components">
-          <div class="card-cat-photo">
-            <%= cl_image_tag cat.photo %>
+      <% if @cats.first %>
+        <% @cats.each do |cat| %>
+          <div class="cards-cat-components">
+            <div class="card-cat-photo">
+              <%= cl_image_tag cat.photo %>
+            </div>
+            <div class="card-cat-infos">
+              <h2><%= link_to cat.name, cat_path(cat) %></h2>
+              <p><%= cat.address %></p>
+            </div>
           </div>
-          <div class="card-cat-infos">
-            <h2><%= link_to cat.name, cat_path(cat) %></h2>
-            <p><%= cat.address %></p>
-          </div>
-        </div>
+        <% end %>
+      <% else %>
+        <p>Vous n'avez aucun chat</p>
       <% end %>
     </div>
 
   <h2>Les chats que j'emprunte</h2>
     <div class="cards-cat">
-      <% @rentals.each do |rental| %>
-        <% cat = Cat.find(rental.cat_id) %>
-        <% owner = User.find(cat.user_id) %>
-        <div class="cards-cat-components">
-          <div class="card-cat-photo">
-            <%= cl_image_tag cat.photo %>
+      <% if @rentals.first %>
+        <% @rentals.each do |rental| %>
+          <% cat = Cat.find(rental.cat_id) %>
+          <% owner = User.find(cat.user_id) %>
+          <div class="cards-cat-components">
+            <div class="card-cat-photo">
+              <%= cl_image_tag cat.photo %>
+            </div>
+            <div class="card-cat-infos">
+              <h2><%= link_to cat.name, cat_path(cat) %></h2>
+              <p><%= cat.address %></p>
+              <p>Propriétaire : <%= owner.username.capitalize %></p>
+              <p>Emprunt du <%= rental.date_start %> au <%= rental.date_end %></p>
+            </div>
           </div>
-          <div class="card-cat-infos">
-            <h2><%= link_to cat.name, cat_path(cat) %></h2>
-            <p><%= cat.address %></p>
-            <p>Propriétaire : <%= owner.username.capitalize %></p>
-            <p>Emprunt du <%= rental.date_start %> au <%= rental.date_end %></p>
-          </div>
-        </div>
+        <% end %>
+      <% else %>
+        <p>Vous n'avez aucun emprunt</p>
       <% end %>
     </div>
 
