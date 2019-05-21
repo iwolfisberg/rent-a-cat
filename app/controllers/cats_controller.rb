@@ -21,6 +21,10 @@ class CatsController < ApplicationController
     @rental = Rental.new
   end
 
+  def index
+    @cats = Cat.all
+  end
+
   private
 
   def cat_params
