@@ -5,4 +5,5 @@ Rails.application.routes.draw do
    resources :cats, only: [:index, :show, :new, :create] do
     resources :rentals, only: [:create]
   end
+  get "/myprofile", to: "pages#myprofile", as: :myprofile
 end
