@@ -1,3 +1,18 @@
+
+.form-container {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.form-card {
+  padding: 20px;
+  background: white;
+  width: 200vpx;
+  border-radius: 10px;
+}
+
 .simple_form {
   div.input {
     margin-bottom: 10px;

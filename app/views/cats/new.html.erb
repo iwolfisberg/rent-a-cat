@@ -1,14 +1,24 @@
-<div class="main-container">
+<div class="form-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1481134803835-48d6de104072?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
 
-  <h1>Ajouter un nouveau chat</h1>
+  <div class="main-container">
+    <div class="form-container">
+      <div class="form-card">
+        <h1>Ajouter un nouveau chat</h1>
+        <%= simple_form_for @cat do |f| %>
+          <%= f.input :name, label: "Nom" %>
+          <%= f.input :description %>
+          <%= f.input :address, label: "Adresse" %>
+          <%= f.input :photo, label: "Photo" %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.submit "Ajouter un chat", class: "btn btn-secondary" %>
+        <% end %>
+      </div>
+    </div>
 
-  <%= simple_form_for @cat do |f| %>
-    <%= f.input :name, label: "Nom" %>
-    <%= f.input :description %>
-    <%= f.input :address, label: "Adresse" %>
-    <%= f.input :photo, label: "Ajouter une photo" %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "Ajouter un chat", class: "btn btn-secondary" %>
-  <% end %>
+  </div>
 
 </div>
+
+
+
+
