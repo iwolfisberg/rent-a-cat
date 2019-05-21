@@ -4,15 +4,17 @@
          url('<%= cl_image_path @cat.photo, height: 400 %>')">
 </div>
 
-<div class="cat-container">
-  <div class="cat-card">
-    <div class="cat-card-information">
-      <h1><%= @cat.name %></h1>
-      <p><%= @cat.address %></p>
+<div class="main-container">
+  <div class="cat-container">
+    <div class="cat-card">
+      <div class="cat-card-information">
+        <h1><%= @cat.name %></h1>
+        <p><%= @cat.address %></p>
+      </div>
+      <div class="cat-card-description">
+        <p><%= @cat.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus ratione nam velit, a eveniet earum, fugit laudantium voluptates suscipit qui quisquam aspernatur officia repellat quaerat provident. Hic, nisi voluptates ducimus.</p>
+      </div>
     </div>
-    <div class="cat-card-description">
-      <p><%= @cat.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus ratione nam velit, a eveniet earum, fugit laudantium voluptates suscipit qui quisquam aspernatur officia repellat quaerat provident. Hic, nisi voluptates ducimus.</p>
-    </div>
+    <%= render 'shared/form_rental' %>
   </div>
-  <%= render 'shared/form_rental' %>
 </div>
