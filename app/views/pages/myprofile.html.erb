@@ -3,15 +3,16 @@
   <div class="index">
     <h1>Mon profil</h1>
     <div class="profile">
-      <div class="profile-username">
-        <p><%= @user.username %></p>
-      </div>
       <div class="profile-photo">
         <% if @user.user_photo.file %>
-          <%= cl_image_tag @user.user_photo.url(:thumbnail), class: "avatar" %>
+          <%= cl_image_tag @user.user_photo.url, size: "100x100" %>
+          <!--<%= cl_image_tag @user.user_photo.url(:thumbnail), class: "avatar" %>-->
         <% else %>
-          <img src="../../assets/images/avatar.png" alt="avatar">
+          <%= image_tag "avatar.png", alt: "alttext", size: "100x100" %>
         <% end %>
+      </div>
+      <div class="profile-username">
+        <p><%= @user.username %></p>
       </div>
     </div>
   </div>
@@ -69,7 +70,7 @@
   </div>
 
   <div class="btn-edit">
-    <%= link_to "Editer mon profil", edit_user_registration_path, class: "btn btn-secondary" %>
+    <%= link_to "Editer mon profil", edit_user_registration_path, class: "btn btn-secondary my-3" %>
   </div>
 
 </div>
