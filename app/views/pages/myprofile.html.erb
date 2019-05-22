@@ -42,7 +42,7 @@
   </div>
 
   <div class="index">
-    <h2>Les chats que j'emprunte</h2>
+    <h2>Les chats que je loue</h2>
     <div class="cards-cat">
       <% if @rentals.first %>
         <% @rentals.each do |rental| %>
@@ -57,13 +57,13 @@
                 <h2><%= cat.name %></h2>
                 <p><%= cat.city %></p>
                 <p>Propriétaire : <%= owner.username.capitalize %></p>
-                <p>Emprunt du <%= rental.date_start %> au <%= rental.date_end %></p>
+                <p>Loué du <%= rental.date_start %> au <%= rental.date_end %></p>
               </div>
             </div>
           <% end %>
         <% end %>
       <% else %>
-        <p>Vous n'avez aucun emprunt.</p>
+        <p>Vous n'avez aucune location.</p>
       <% end %>
     </div>
     <%= link_to "Rechercher un chat", cats_path, class: "btn btn-secondary" %>
