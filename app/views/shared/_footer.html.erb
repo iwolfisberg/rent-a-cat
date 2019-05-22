@@ -1,0 +1,56 @@
+<footer class="footer-distributed">
+  <div class="footer-left">
+    <h3>Rent<span> a cat</span></h3>
+    <%= cl_image_tag("cat_mg7wjp", width: 30) %>
+
+    <p class="footer-links">
+      <%= link_to "Home", root_path %>
+      ·
+      <%= link_to "About", root_path %>
+      ·
+      <%= link_to "Faq", root_path %>
+      ·
+      <%= link_to "Contact", root_path %>
+    </p>
+
+    <p class="footer-company-name">Rent a cat &copy; 2019</p>
+  </div>
+
+  <div class="footer-center">
+    <div>
+      <i class="fas fa-map-marker-alt"></i>
+      <p><span>Rue des gamelles 22</span> Lausanne, Suisse</p>
+    </div>
+
+    <div>
+      <i class="fas fa-phone"></i>
+      <p>+41 079 812 34 56</p>
+    </div>
+
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><%= mail_to "rentacat@company.com" %></p>
+    </div>
+  </div>
+
+  <div class="footer-right">
+    <p class="footer-company-about">
+      About Rent a cat
+    </p>
+
+    <div class="footer-icons">
+      <%= link_to root_path do %>
+        <i class="fab fa-facebook-square"></i>
+      <% end %>
+      <%= link_to root_path do %>
+        <i class="fab fa-twitter-square"></i>
+      <% end %>
+      <%= link_to root_path do %>
+        <i class="fab fa-linkedin"></i>
+      <% end %>
+      <%= link_to root_path do %>
+        <i class="fab fa-github-square"></i>
+      <% end %>
+    </div>
+  </div>
+</footer>
