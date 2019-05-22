@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_05_22_071327) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "city"
-    t.integer "code_postal"
+    t.integer "postcode"
     t.index ["user_id"], name: "index_cats_on_user_id"
   end
 

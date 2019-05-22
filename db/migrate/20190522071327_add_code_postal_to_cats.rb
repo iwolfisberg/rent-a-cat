@@ -1,5 +1,5 @@
 class AddCodePostalToCats < ActiveRecord::Migration[5.2]
   def change
-    add_column :cats, :code_postal, :integer
+    add_column :cats, :postcode, :integer
   end
 end
