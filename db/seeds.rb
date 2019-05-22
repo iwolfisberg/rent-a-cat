@@ -6,40 +6,29 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "destroy all"
 User.destroy_all
 Cat.destroy_all
 Rental.destroy_all
 
-iris = User.create!(username: "iris", email: "iris.wolfisberg@hotmail.fr", password: "secret")
-nico = User.create!(username: "nico", email: "varonenico@gmail.com", password: "secret")
-justine = User.create!(username: "justine", email: "jtincq@gmail.com", password: "secret")
+puts "create user"
 
-url = "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558366291/lqd64liddov2csgwlsrg.jpg"
-choupette = Cat.new(name: "Choupette", street: "Chemin des Pâquerettes 18", postcode: "1580", city: "Avenches", user_id: iris.id)
-choupette.remote_photo_url = url
-choupette.save
+iris    = User.create!(username: "iris",    email: "iris.wolfisberg@hotmail.fr", password: "secret")
+nico    = User.create!(username: "nico",    email: "varonenico@gmail.com",       password: "secret")
+justine = User.create!(username: "justine", email: "jtincq@gmail.com",           password: "secret")
 
-url = "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558446593/zoojr1nwnd31u1hhxzin.jpg"
-Roblochon = Cat.new(name: "Roblochon", street: "Chemin des Pâquerettes 18", postcode: "1580", city: "Avenches", user_id: iris.id)
-Roblochon.remote_photo_url = url
-Roblochon.save
+puts "create cat"
 
-url = "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558451502/agata-kaczowka-1234844-unsplash_wqzjyt.jpg"
-Romeo = Cat.new(name: "Romeo", street: "Avenue de la Chablière 22", postcode: "1004", city: "Lausanne", user_id: justine.id)
-Romeo.remote_photo_url = url
-Romeo.save
+def create_cat(name, street, zip, city, id, url)
+  cat = Cat.new(name: name, street: street, postcode: zip, city: city, user_id: id)
+  cat.remote_photo_url = url
+  cat.save
+end
 
-url = "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558451466/jose-munoz-687864-unsplash_ayh5le.jpg"
-Biscotte = Cat.new(name: "Biscotte", street: "Avenue de la Chablière 22", postcode: "1004", city: "Lausanne", user_id: justine.id)
-Biscotte.remote_photo_url = url
-Biscotte.save
 
-url = "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558451804/michael-sum-565770-unsplash_zclx5f.jpg"
-Garfield = Cat.new(name: "Garfield", street: "Rue de Lausanne 50", postcode: "1900", city: "Martigny", user_id: nico.id)
-Garfield.remote_photo_url = url
-Garfield.save
-
-url = "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558451467/marjan-grabowski-635827-unsplash_ws0fto.jpg"
-Plume = Cat.new(name: "Plume", street: "Rue de Lausanne 50", postcode: "1900", city: "Martigny", user_id: nico.id)
-Plume.remote_photo_url = url
-Plume.save
+create_cat("Choupette", "Chemin des Pâquerettes 18", "1580", "Avenches", iris.id, "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558366291/lqd64liddov2csgwlsrg.jpg")
+create_cat("Roblochon", "Chemin des Pâquerettes 18", "1580", "Avenches", iris.id, "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558446593/zoojr1nwnd31u1hhxzin.jpg")
+create_cat("Romeo", "Avenue de la Chablière 22", "1004", "Lausanne", justine.id, "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558451502/agata-kaczowka-1234844-unsplash_wqzjyt.jpg")
+create_cat("Biscotte", "Avenue de la Chablière 22", "1004", "Lausanne", justine.id, "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558451466/jose-munoz-687864-unsplash_ayh5le.jpg")
+create_cat("Garfield", "Rue de Lausanne 50", "1900", "Martigny", nico.id, "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558451804/michael-sum-565770-unsplash_zclx5f.jpg")
+create_cat("Plume", "Rue de Lausanne 50", "1900", "Martigny", nico.id, "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558451467/marjan-grabowski-635827-unsplash_ws0fto.jpg")
