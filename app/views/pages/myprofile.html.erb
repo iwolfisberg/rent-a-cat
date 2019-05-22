@@ -21,15 +21,17 @@
     <div class="cards-cat">
       <% if @cats.first %>
         <% @cats.each do |cat| %>
+          <%= link_to cat_path(cat) do  %>
           <div class="cards-cat-components">
             <div class="card-cat-photo">
               <%= cl_image_tag cat.photo %>
             </div>
             <div class="card-cat-infos">
-              <h2><%= link_to cat.name, cat_path(cat) %></h2>
+              <h2><%= cat.name %></h2>
               <p><%= cat.city %></p>
             </div>
           </div>
+          <% end %>
         <% end %>
       <% else %>
         <p>Vous n'avez aucun chat.</p>
@@ -45,17 +47,19 @@
         <% @rentals.each do |rental| %>
           <% cat = Cat.find(rental.cat_id) %>
           <% owner = User.find(cat.user_id) %>
-          <div class="cards-cat-components">
-            <div class="card-cat-photo">
-              <%= cl_image_tag cat.photo %>
+          <%= link_to cat_path(cat) do  %>
+            <div class="cards-cat-components">
+              <div class="card-cat-photo">
+                <%= cl_image_tag cat.photo %>
+              </div>
+              <div class="card-cat-infos">
+                <h2><%= cat.name %></h2>
+                <p><%= cat.city %></p>
+                <p>Propriétaire : <%= owner.username.capitalize %></p>
+                <p>Emprunt du <%= rental.date_start %> au <%= rental.date_end %></p>
+              </div>
             </div>
-            <div class="card-cat-infos">
-              <h2><%= link_to cat.name, cat_path(cat) %></h2>
-              <p><%= cat.city %></p>
-              <p>Propriétaire : <%= owner.username.capitalize %></p>
-              <p>Emprunt du <%= rental.date_start %> au <%= rental.date_end %></p>
-            </div>
-          </div>
+          <% end %>
         <% end %>
       <% else %>
         <p>Vous n'avez aucun emprunt.</p>

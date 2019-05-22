@@ -8,4 +8,11 @@ class Cat < ApplicationRecord
   validates :city, presence: true
 
   mount_uploader :photo, PhotoUploader
+
+  geocoded_by :address
+  after_validation :geocode #, if: :will_save_change_to_street?
+
+  def address
+    return "#{self.street}, #{self.postcode}, #{self.city}"
+  end
 end
