@@ -47,6 +47,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 # Claudinary
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+# Geocoding and map
+gem 'geocoder'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
