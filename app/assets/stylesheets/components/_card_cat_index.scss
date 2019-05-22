@@ -59,9 +59,11 @@
         grid-row-gap: 15px;
         width: 100%;
         justify-items: center;
-  }
-  .cards-cat-components {
-    width: 80%;
+        a {
+          // padding: 0;
+          // margin: 0;
+          width: 80%;
+        }
   }
   .index h1 {
     text-align: center;
