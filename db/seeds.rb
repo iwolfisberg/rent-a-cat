@@ -43,5 +43,3 @@ url = "https://res.cloudinary.com/ddnihwuhu/image/upload/v1558451467/marjan-grab
 Plume = Cat.new(name: "Plume", street: "Rue de Lausanne 50", postcode: "1900", city: "Martigny", user_id: nico.id)
 Plume.remote_photo_url = url
 Plume.save
-
-Rental.create!([{ user_id: nico.id, cat_id: choupette.id, date_start: "13-06-2019", date_end: "18-06-2019" }])
