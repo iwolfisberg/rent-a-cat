@@ -20,20 +20,13 @@
 }
 
 /* Footer links */
-.footer-distributed .footer-links {
+.footer-distributed .footer-links{
   margin: 20px 0 12px;
   padding: 0;
 }
 
-.footer-distributed .footer-links a{
-  display:inline-block;
-  line-height: 1.8;
-  text-decoration: none;
-  color:  inherit;
-}
-
 .footer-distributed .footer-company-name{
-  color:  #8f9296;
+  color: #8f9296;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
@@ -42,7 +35,7 @@
 /* Footer Center */
 
 .footer-distributed .footer-center i{
-  background-color:  #33383b;
+  background-color: #33383b;
   font-size: 25px;
   width: 38px;
   height: 38px;
@@ -103,7 +96,7 @@
 
 /* If you don't want the footer to be responsive, remove these media queries */
 
-@media (max-width: 880px) {
+@media (max-width: 880px){
   .footer-distributed{
     font: bold 14px sans-serif;
     display: block;
