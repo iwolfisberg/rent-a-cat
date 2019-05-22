@@ -1,9 +1,23 @@
 <div class="main-container">
-  <h1>Mon profil</h1>
+
+  <div class="index">
+    <h1>Mon profil</h1>
+    <div class="profile">
+      <div class="profile-username">
+        <p><%= @user.username %></p>
+      </div>
+      <div class="profile-photo">
+        <% if @user.user_photo.file %>
+          <%= cl_image_tag @user.user_photo.url(:thumbnail), class: "avatar" %>
+        <% else %>
+          <img src="../../assets/images/avatar.png" alt="avatar">
+        <% end %>
+      </div>
+    </div>
+  </div>
 
   <div class="index">
     <h2>Mes chats</h2>
-
     <div class="cards-cat">
       <% if @cats.first %>
         <% @cats.each do |cat| %>
@@ -21,13 +35,11 @@
         <p>Vous n'avez aucun chat.</p>
       <% end %>
     </div>
-
     <%= link_to "Ajouter un nouveau chat", new_cat_path, class: "btn btn-secondary" %>
   </div>
 
   <div class="index">
     <h2>Les chats que j'emprunte</h2>
-
     <div class="cards-cat">
       <% if @rentals.first %>
         <% @rentals.each do |rental| %>
@@ -49,9 +61,11 @@
         <p>Vous n'avez aucun emprunt.</p>
       <% end %>
     </div>
-
     <%= link_to "Rechercher un chat", cats_path, class: "btn btn-secondary" %>
+  </div>
 
+  <div class="btn-edit">
+    <%= link_to "Editer mon profil", edit_user_registration_path, class: "btn btn-secondary" %>
   </div>
 
 </div>

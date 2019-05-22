@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :rentals, dependent: :destroy
   has_many :cats, dependent: :destroy
+  mount_uploader :user_photo, PhotoUploader
 end

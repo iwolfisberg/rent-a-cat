@@ -6,6 +6,10 @@
   justify-content: flex-end;
 }
 
+.form-container-edit {
+  height: 100%;
+}
+
 .form-card {
   padding: 20px;
   background: white;
@@ -13,8 +17,12 @@
   border-radius: 10px;
 }
 
+.form-card-edit {
+  margin-top: 35px;
+}
+
 .form-search {
-    height: 50vh !important;
+  height: 50vh !important;
   justify-content: flex-start  !important;
 }
 
@@ -30,9 +38,10 @@
   }
 }
 
-.form-control-label, .form-check-label {
+.form-control-label, .form-check-label, .user_user_photo > label {
   width: 250px !important;
 }
+
 
 @media(max-width: 992px) {
   .form-card {
