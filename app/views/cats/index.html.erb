@@ -14,15 +14,17 @@
   <h1>Les derniers chats</h1>
   <div class="cards-cat">
     <% @cats.each do |cat| %>
-      <div class="cards-cat-components">
-        <div class="card-cat-photo">
-          <%= cl_image_tag cat.photo %>
+      <%= link_to cat_path(cat), class: "cards-cat-link" do %>
+        <div class="cards-cat-components">
+          <div class="card-cat-photo">
+            <%= cl_image_tag cat.photo %>
+          </div>
+          <div class="card-cat-infos">
+            <h2><%= cat.name %></h2>
+            <p><%= cat.city %></p>
+          </div>
         </div>
-        <div class="card-cat-infos">
-          <h2><%= link_to cat.name, cat_path(cat) %></h2>
-          <p><%= cat.city %></p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
