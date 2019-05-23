@@ -15,6 +15,7 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import "../plugins/flatpickr"
+import "../plugins/map"
 console.log('Hello World from Webpacker')
 
 // import { initDropdownNavbarOnClick } from '../components/navbar';
