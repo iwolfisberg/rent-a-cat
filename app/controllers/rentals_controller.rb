@@ -6,6 +6,7 @@ class RentalsController < ApplicationController
     @cat = Cat.find(params[:cat_id])
     @rental.cat = @cat
 
+
     if @rental.save
       redirect_to myprofile_path
     else
