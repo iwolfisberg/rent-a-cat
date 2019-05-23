@@ -1,5 +1,5 @@
 <%= simple_form_for [@cat, @rental] do |f| %>
-  <%= f.input :date_start, as: :string, required: false, input_html: {class: "datepicker"}  %>
-  <%= f.input :date_end, as: :string, required: false, input_html: {class: "datepicker"}  %>
+  <%= f.input :date_start, label: "Début location", as: :string, required: false, input_html: {class: "datepicker"}  %>
+  <%= f.input :date_end, label: "Fin location", as: :string, required: false, input_html: {class: "datepicker"}  %>
   <%= f.submit "Louer ce chat", class:"btn btn-primary btn-rental" %>
 <% end %>
