@@ -4,6 +4,10 @@ class CatsController < ApplicationController
 
   def index
     @cats = Cat.where.not(latitude: nil, longitude: nil).order(created_at: :desc)
+    if params[:query].present?
+      @cats = Cat.where("city ILIKE ?", "%#{params[:query]}%")
+      @city = @cats.first.city
+    end
     @markers = @cats.map do |cat|
       {
         lat: cat.latitude,

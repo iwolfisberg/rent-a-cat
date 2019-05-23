@@ -9,7 +9,7 @@
 </div>
 
 <div class="main-container index">
-  <h1>Les derniers chats</h1>
+  <h1>Les derniers chats <%= ("à " + @city) if @city %></h1>
   <div class="cards-cat">
     <% @cats.each do |cat| %>
       <%= link_to cat_path(cat), class: "cards-cat-link" do %>
