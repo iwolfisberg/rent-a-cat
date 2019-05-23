@@ -24,6 +24,7 @@ class CatsController < ApplicationController
     @user = current_user
     @cat.user_id = @user
     @rental = Rental.new
+    raise
   end
 
   private
