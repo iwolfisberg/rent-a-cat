@@ -57,6 +57,9 @@
         grid-gap: 15px;
         width: 100%;
   }
+  .index {
+    margin: 0 25px 0 25px;
+  }
 }
 // objet plus petit que small device (xs)
 @media(max-width: 768px) {
@@ -67,12 +70,14 @@
         width: 100%;
         justify-items: center;
         a {
-          // padding: 0;
-          // margin: 0;
           width: 80%;
         }
-  }
-  .index h1 {
+      }
+  .index h1, .index h2 {
     text-align: center;
+  }
+  .index > .link {
+    display: flex;
+    justify-content: center;
   }
 }

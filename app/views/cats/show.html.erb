@@ -1,5 +1,5 @@
 <div class="cat-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
-         url('<%= cl_image_path @cat.photo, height: 400 %>')">
+         url('<%= cl_image_path @cat.photo %>')">
 </div>
 
 <div class="main-container">
@@ -10,7 +10,7 @@
         <p><%= @cat.street %>, <%= @cat.postcode %> <%= @cat.city %></p>
       </div>
       <div class="cat-card-description">
-        <p><%= @cat.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus ratione nam velit, a eveniet earum, fugit laudantium voluptates suscipit qui quisquam aspernatur officia repellat quaerat provident. Hic, nisi voluptates ducimus.</p>
+        <p><%= @cat.description %></p>
       </div>
       <div class="avatar-owner-show">
         <% @owner = User.find(@cat.user_id) %>

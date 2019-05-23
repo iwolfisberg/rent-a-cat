@@ -1,18 +1,28 @@
 <div class="main-container">
 
   <div class="index">
-    <h1>Mon profil</h1>
+    <h1>Mon compte</h1>
+  </div>
+
+  <div class="index">
+    <h2>Mon profil</h2>
     <div class="profile">
-      <div class="profile-photo">
-        <% if @user.user_photo.file %>
-          <%= cl_image_tag @user.user_photo.url, height: "100" %>
-        <% else %>
-          <%= image_tag "avatar.png", alt: "alttext", size: "100x100" %>
-        <% end %>
+      <div class="profile-components d-flex align-items-end">
+        <div class="profile-photo mr-3">
+          <% if @user.user_photo.file %>
+            <%= cl_image_tag @user.user_photo.url, height: "200" %>
+          <% else %>
+            <%= image_tag "avatar.png", alt: "alttext", height: "200" %>
+          <% end %>
+        </div>
+        <div class="profile-infos">
+          <p>Nom d'utilisateur: <%= @user.username %></p>
+          <p>Adresse mail: <%= @user.email %></p>
+        </div>
       </div>
-      <div class="profile-username">
-        <p><%= @user.username %></p>
-      </div>
+    </div>
+    <div class="link">
+      <%= link_to "Editer mon profil", edit_user_registration_path, class: "btn btn-secondary my-3" %>
     </div>
   </div>
 
@@ -37,7 +47,9 @@
         <p>Vous n'avez aucun chat.</p>
       <% end %>
     </div>
-    <%= link_to "Ajouter un nouveau chat", new_cat_path, class: "btn btn-secondary" %>
+    <div class="link">
+      <%= link_to "Ajouter un nouveau chat", new_cat_path, class: "btn btn-secondary" %>
+    </div>
   </div>
 
   <div class="index">
@@ -65,12 +77,9 @@
         <p>Vous n'avez aucune location.</p>
       <% end %>
     </div>
-    <%= link_to "Rechercher un chat", cats_path, class: "btn btn-secondary" %>
+    <div class="link">
+      <%= link_to "Rechercher un chat", cats_path, class: "btn btn-secondary" %>
+    </div>
   </div>
-
-  <div class="btn-edit">
-    <%= link_to "Editer mon profil", edit_user_registration_path, class: "btn btn-secondary my-3" %>
-  </div>
-
 </div>
 
