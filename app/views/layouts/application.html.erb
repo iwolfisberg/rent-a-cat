@@ -17,5 +17,8 @@
     <%= render 'shared/flashed' %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDtopiWWJbD1O2idAlImH98RyBMoi4K--w" %>
+    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag "map" %>
   </body>
 </html>
