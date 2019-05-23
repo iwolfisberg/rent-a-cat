@@ -13,7 +13,7 @@
             <%= cl_image_tag @user.user_photo.url, height: "200" %>
             <!--<%= cl_image_tag @user.user_photo.url(:thumbnail), class: "avatar" %>-->
           <% else %>
-            <%= image_tag "avatar.png", alt: "alttext", size: "200x200" %>
+            <%= image_tag "avatar.png", alt: "alttext", height: "200" %>
           <% end %>
         </div>
         <div class="profile-infos">
