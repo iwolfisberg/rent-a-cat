@@ -23,6 +23,10 @@
             <h2><%= cat.name %></h2>
             <p><%= cat.city %></p>
           </div>
+          <div class="avatar-owner">
+            <% @owner = User.find(cat.user_id) %>
+            <%= cl_image_tag @owner.user_photo.url(:thumbnail), class: "avatar" %>
+          </div>
         </div>
       <% end %>
     <% end %>

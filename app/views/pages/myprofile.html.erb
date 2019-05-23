@@ -5,8 +5,7 @@
     <div class="profile">
       <div class="profile-photo">
         <% if @user.user_photo.file %>
-          <%= cl_image_tag @user.user_photo.url, size: "100x100" %>
-          <!--<%= cl_image_tag @user.user_photo.url(:thumbnail), class: "avatar" %>-->
+          <%= cl_image_tag @user.user_photo.url, height: "100" %>
         <% else %>
           <%= image_tag "avatar.png", alt: "alttext", size: "100x100" %>
         <% end %>

@@ -18,6 +18,7 @@
 
 .cards-cat-components {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
 }
 
 .card-cat-photo > img {
@@ -39,6 +40,12 @@
     opacity: .7;
     margin: 0;
   }
+}
+
+.avatar-owner {
+  position: absolute;
+  bottom: 13px;
+  right: 10px;
 }
 
 
