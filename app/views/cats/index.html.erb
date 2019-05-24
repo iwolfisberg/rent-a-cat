@@ -1,17 +1,17 @@
 <div class="search-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1555341029-f730b0ce4522?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
 
-  <div class="main-container">
-    <div class="form-container form-search">
-      <div class="form-card">
-        <h1>Vous vous sentez seul.e ? Louez un chat !</h1>
-<!--         Ajouter un formulaire pour filtrer les chats
- -->      </div>
+  <div class="main-container form-container form-search">
+    <div class="form-card">
+      <h1>Vous vous sentez seul.e ? Louez un chat !</h1>
+      <h3>Trouvez un chat à proximité de vous :</h3>
+      <%= render 'shared/form_search' %>
     </div>
   </div>
 </div>
 
 <div class="main-container index">
   <h1>Les derniers chats</h1>
+  <p><%= @result_text if params[:query].present? %></p>
   <div class="cards-cat">
     <% @cats.each do |cat| %>
       <%= link_to cat_path(cat), class: "cards-cat-link" do %>
