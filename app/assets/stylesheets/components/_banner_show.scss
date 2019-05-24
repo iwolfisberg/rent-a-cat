@@ -1,6 +1,11 @@
-.cat-banner {
-  background-size: cover;
-  background-position: center;
-  height: 400px;
+// .cat-banner {
+//   background-size: cover;
+//   background-position: center;
+//   height: 400px;
+//   width: 100%;
+// }
+
+.main-container > img {
   width: 100%;
+  object-fit: cover;
 }
