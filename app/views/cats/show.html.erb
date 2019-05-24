@@ -20,7 +20,27 @@
           <%= image_tag "avatar.png", alt: "avatar", class: "avatar-large" %>
         <% end %>
       </div>
+      <div>
+        <h2>
+          <%= pluralize @cat.reviews.size, "review" %>
+        </h2>
+        <div id="reviews">
+          <% if @cat.reviews.blank? %>
+            Be the first to leave a review for <%= @cat.name %>
+          <% else %>
+            <% @cat.reviews.each do |review| %>
+              <%= render 'reviews/show', review: review %>
+            <% end %>
+          <% end %>
+        </div>
+        <div>
+          <p><%= review.content %></p>
+        </div>
+      </div>
     </div>
     <%= render 'shared/form_rental' %>
   </div>
 </div>
+
+
+
