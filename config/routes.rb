@@ -4,6 +4,7 @@ Rails.application.routes.draw do
    root to: "cats#index"
    resources :cats, only: [:index, :show, :new, :create] do
     resources :rentals, only: [:create]
+    resources :reviews, only: [:new, :create]
   end
   get "/myprofile", to: "pages#myprofile", as: :myprofile
 end
