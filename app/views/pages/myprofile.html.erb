@@ -59,28 +59,30 @@
         <% @rentals.each do |rental| %>
           <% cat = Cat.find(rental.cat_id) %>
           <% owner = User.find(cat.user_id) %>
-          <%= link_to cat_path(cat) do  %>
             <div class="cards-cat-components">
-              <div class="card-cat-photo">
-                <%= cl_image_tag cat.photo, :height=>200, crop: :scale %>
-              </div>
+              <%= link_to cat_path(cat) do  %>
+                <div class="card-cat-photo">
+                  <%= cl_image_tag cat.photo, :height=>200, crop: :scale %>
+                </div>
+              <% end %>
               <div class="card-cat-infos">
                 <h2><%= cat.name %></h2>
                 <p><%= cat.city %></p>
                 <p>Propriétaire : <%= owner.username.capitalize %></p>
                 <p>Loué du <%= rental.date_start %> au <%= rental.date_end %></p>
               </div>
+              <div class="link">
+                <%= link_to "Ajouter une review", new_cat_review_path(cat), class: "btn btn-secondary mx-5 mb-4 bg-primary border-0 d-flex justify-content-center" %>
+              </div>
             </div>
-            <div class="link">
-              <%= link_to "Rechercher un chat", cats_path, class: "btn btn-secondary" %>
-              <%= link_to "Ajouter une review", new_cat_review_path(cat), class: "btn btn-secondary" %>
-            </div>
-          <% end %>
         <% end %>
       <% else %>
         <p>Vous n'avez aucune location.</p>
       <% end %>
     </div>
+        <div class="link">
+          <%= link_to "Rechercher un chat", cats_path, class: "btn btn-secondary mb-3" %>
+        </div>
   </div>
 </div>
 
