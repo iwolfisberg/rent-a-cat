@@ -1,5 +1,5 @@
 <div class="cat-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),
-         url('<%= cl_image_path @cat.photo %>')">
+         url('<%= cl_image_path @cat.photo, height: 200, crop: :scale %>')">
 </div>
 
 <div class="main-container">
@@ -15,7 +15,7 @@
       <div class="avatar-owner-show">
         <% @owner = User.find(@cat.user_id) %>
         <% if @owner.user_photo.file %>
-            <%= cl_image_tag @owner.user_photo.url, class: "avatar-large" %>
+            <%= cl_image_tag @owner.user_photo.url, height: 60, crop: :scale, class: "avatar-large" %>
         <% else %>
           <%= image_tag "avatar.png", alt: "avatar", class: "avatar-large" %>
         <% end %>

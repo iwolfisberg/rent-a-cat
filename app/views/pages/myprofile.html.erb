@@ -10,9 +10,9 @@
       <div class="profile-components d-flex align-items-end">
         <div class="profile-photo mr-3">
           <% if @user.user_photo.file %>
-            <%= cl_image_tag @user.user_photo.url, height: "200" %>
+            <%= cl_image_tag @user.user_photo.url, :height=>200, crop: :scale %>
           <% else %>
-            <%= image_tag "avatar.png", alt: "alttext", height: "200" %>
+            <%= image_tag "avatar.png", alt: "alttext", :height=>200, crop: :scale %>
           <% end %>
         </div>
         <div class="profile-infos">
@@ -34,7 +34,7 @@
           <%= link_to cat_path(cat) do  %>
           <div class="cards-cat-components">
             <div class="card-cat-photo">
-              <%= cl_image_tag cat.photo %>
+              <%= cl_image_tag cat.photo, :height=>200, crop: :scale %>
             </div>
             <div class="card-cat-infos">
               <h2><%= cat.name %></h2>
@@ -62,7 +62,7 @@
           <%= link_to cat_path(cat) do  %>
             <div class="cards-cat-components">
               <div class="card-cat-photo">
-                <%= cl_image_tag cat.photo %>
+                <%= cl_image_tag cat.photo, :height=>200, crop: :scale %>
               </div>
               <div class="card-cat-infos">
                 <h2><%= cat.name %></h2>
