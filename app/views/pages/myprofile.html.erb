@@ -73,12 +73,13 @@
             </div>
           <% end %>
         <% end %>
+          <div class="link">
+            <%= link_to "Rechercher un chat", cats_path, class: "btn btn-secondary" %>
+            <%= link_to "Ajouter une review", new_cat_review_path(cat), class: "btn btn-secondary" %>
+          </div>
       <% else %>
         <p>Vous n'avez aucune location.</p>
       <% end %>
-    </div>
-    <div class="link">
-      <%= link_to "Rechercher un chat", cats_path, class: "btn btn-secondary" %>
     </div>
   </div>
 </div>
