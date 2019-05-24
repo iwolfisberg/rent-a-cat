@@ -10,7 +10,7 @@
 
 <div class="main-container index">
   <h1>Les derniers chats</h1>
-  <p><%= @result_title if params[:query].present? %></p>
+  <p><%= @result_text if params[:query].present? %></p>
   <div class="cards-cat">
     <% @cats.each do |cat| %>
       <%= link_to cat_path(cat), class: "cards-cat-link" do %>

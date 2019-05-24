@@ -6,11 +6,15 @@ class CatsController < ApplicationController
     @cats = Cat.where.not(latitude: nil, longitude: nil).order(created_at: :desc)
     if params[:query].present?
       distance = 20
-      @cats = Cat.near("%#{params[:query]}%", distance)
-      @result_title = "à #{distance} km de #{params[:query]}"
-    else
-      @result_title = "Aucun chat trouvé à #{distance} km de #{params[:query]}"
+      cats_near = @cats.near("%#{params[:query]}%", distance)
+      if cats_near.first
+        @cats = cats_near
+        @result_text = "dans un rayon de #{distance} km de #{params[:query]} :"
+      else
+        @result_text = "Aucun chat trouvé dans un rayon de #{distance} km de #{params[:query]}."
+      end
     end
+
     @markers = @cats.map do |cat|
       {
         lat: cat.latitude,
