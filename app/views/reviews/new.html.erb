@@ -5,8 +5,8 @@
       <div class="form-card">
         <h1>Ajouter une nouvelle review</h1>
         <%= simple_form_for [@cat, @review] do |f| %>
-          <%= f.input :content %>
-          <%= f.submit "Ajouter review", class:"btn btn-primary" %>
+          <%= f.input :content, label: "Commentaire" %>
+          <%= f.submit "Ajouter", class:"btn btn-primary" %>
         <% end %>
       </div>
     </div>
